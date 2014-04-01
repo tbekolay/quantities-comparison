@@ -21,25 +21,40 @@ import numpy as np
 warnings.simplefilter('ignore')
 np.seterr(all='ignore')
 
-classes = (
-    bm.bench_astropy.BenchAstropy,
-    bm.bench_dimensions.BenchDimensions,
-    bm.bench_dimpy.BenchDimpy,
-    bm.bench_ipython_physics.BenchIpythonPhysics,
-    bm.bench_magnitude.BenchMagnitude,
-    bm.bench_numericalunits.BenchNumericalunits,
-    bm.bench_physical_quantities.BenchPhysicalQuantities,
-    bm.bench_pint.BenchPint,
-    bm.bench_piquant.BenchPiquant,
-    bm.bench_quantities.BenchQuantities,
-    bm.bench_scimath.BenchScimath,
-    bm.bench_unum.BenchUnum,
-)
+CLASSES = (bm.bench_astropy.BenchAstropy,
+           bm.bench_dimensions.BenchDimensions,
+           bm.bench_dimpy.BenchDimpy,
+           bm.bench_ipython_physics.BenchIpythonPhysics,
+           bm.bench_magnitude.BenchMagnitude,
+           bm.bench_numericalunits.BenchNumericalunits,
+           bm.bench_physical_quantities.BenchPhysicalQuantities,
+           bm.bench_pint.BenchPint,
+           bm.bench_piquant.BenchPiquant,
+           bm.bench_quantities.BenchQuantities,
+           bm.bench_scimath.BenchScimath,
+           bm.bench_unum.BenchUnum,
+           )
 
-res = []
-for cls in classes:
-    print cls
-    res.append(bm.base.bench(cls))
 
-with open('results.json', 'w') as outfile:
-    json.dump(res, outfile, indent=2, separators=(',', ': '))
+def get_comparisons(classes=CLASSES):
+    res = []
+    for cls in classes:
+        print cls.__name__
+        res.append(bm.base.bench(cls))
+
+
+def save_comparisons(res, fname=None):
+    if fname is None:
+        fname = 'results.json'
+
+    with open(fname, 'w') as outfile:
+        json.dump(res, outfile, indent=2, separators=(',', ': '))
+
+
+def run(classes=CLASSES, fname=None):
+    res = get_comparisons(classes)
+    save_comparisons(res, fname)
+
+
+if __name__ == "__main__":
+    run()
