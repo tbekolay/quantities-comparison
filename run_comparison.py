@@ -1,7 +1,6 @@
 import benchmarks.bench_astropy
 import benchmarks.bench_dimensions
 import benchmarks.bench_dimpy
-import benchmarks.bench_ipython_physics
 import benchmarks.bench_magnitude
 import benchmarks.bench_numericalunits
 import benchmarks.bench_physical_quantities
@@ -24,7 +23,6 @@ np.seterr(all='ignore')
 CLASSES = (bm.bench_astropy.BenchAstropy,
            bm.bench_dimensions.BenchDimensions,
            bm.bench_dimpy.BenchDimpy,
-           bm.bench_ipython_physics.BenchIpythonPhysics,
            bm.bench_magnitude.BenchMagnitude,
            bm.bench_numericalunits.BenchNumericalunits,
            bm.bench_physical_quantities.BenchPhysicalQuantities,
