@@ -8,7 +8,7 @@ class BenchPint(base.BenchModule):
     facts = {
         'LOC': 2914,
         'First release': '2012-07',
-        'Most recent release': '2013-05',
+        'Most recent release': '2014-02',
         'Implementation': 'Container',
         'URL': 'https://pint.readthedocs.org/en/latest/',
         'PyPI': 'pint',
