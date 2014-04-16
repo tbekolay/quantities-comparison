@@ -3,3 +3,4 @@ results.json
 results.csv
 *.pyc
 *.kdev4
+.ipynb_checkpoints
