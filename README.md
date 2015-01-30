@@ -10,7 +10,7 @@ by running `run_comparisons.py`.
 Some more information about quantities
 and the current state of representing physical quantities
 in Python can be found in
-[this talk](http://bekolay.org/scipy2013-quantities/).
+[this talk](https://www.youtube.com/watch?v=N-edLdxiM40).
 
 Packages tested
 ---------------
